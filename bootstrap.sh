@@ -18,12 +18,12 @@ fi
 
 $BIN_DIR/cf login -a $CF_API -u admin -p $CF_PASSWORD --skip-ssl-validation -o system
 
-$BIN_DIR/cf create-space -o workspaces $ID
+$BIN_DIR/cf create-space -o workspaces $WORKSHOP_ID
 
 password='pa55w0rd'
 
-cf create-user $ID $password
-cf set-space-role $ID workspaces $ID SpaceDeveloper
+cf create-user $WORKSHOP_ID $password
+cf set-space-role $WORKSHOP_ID workspaces $WORKSHOP_ID SpaceDeveloper
 
 secret_password=$(echo $password | base64)
 
@@ -31,7 +31,7 @@ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Secret
 metadata:
-  name: $ID
+  name: $WORKSHOP_ID
   namespace: workspaces
 type: Opaque
 data:
