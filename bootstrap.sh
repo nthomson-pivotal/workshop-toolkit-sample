@@ -25,6 +25,7 @@ password='pa55w0rd'
 $BIN_DIR/cf create-user $WORKSHOP_ID $password
 $BIN_DIR/cf set-space-role $WORKSHOP_ID workspaces $WORKSHOP_ID SpaceDeveloper
 
+secret_api=$(echo $CF_API | base64)
 secret_password=$(echo $password | base64)
 
 cat <<EOF | kubectl apply -f -
@@ -35,5 +36,6 @@ metadata:
   namespace: workspaces
 type: Opaque
 data:
+  cf_api: $secret_api
   cf_password: $secret_password
 EOF
