@@ -16,4 +16,4 @@ if [ ! -f "$BIN_DIR/cf" ]; then
   chmod +x $BIN_DIR/cf
 fi
 
-$BIN_DIR/cf login -a $CF_API -u admin -p $CF_PASSWORD
+$BIN_DIR/cf login -a $CF_API -u admin -p $CF_PASSWORD --skip-ssl-validation
