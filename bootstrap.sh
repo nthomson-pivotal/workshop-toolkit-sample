@@ -22,8 +22,8 @@ $BIN_DIR/cf create-space -o workspaces $WORKSHOP_ID
 
 password='pa55w0rd'
 
-cf create-user $WORKSHOP_ID $password
-cf set-space-role $WORKSHOP_ID workspaces $WORKSHOP_ID SpaceDeveloper
+$BIN_DIR/cf create-user $WORKSHOP_ID $password
+$BIN_DIR/cf set-space-role $WORKSHOP_ID workspaces $WORKSHOP_ID SpaceDeveloper
 
 secret_password=$(echo $password | base64)
 
