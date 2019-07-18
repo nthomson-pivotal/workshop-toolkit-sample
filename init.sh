@@ -14,4 +14,4 @@ git clone https://github.com/cloudfoundry-samples/spring-music.git
 sudo ln -s /mnt/coder/bin/cf /usr/bin/cf
 
 # Log in to CF CLI
-cf login -a $cf_api -u admin -p $cf_password --skip-ssl-validation
+#cf login -a $cf_api -u admin -p $cf_password --skip-ssl-validation

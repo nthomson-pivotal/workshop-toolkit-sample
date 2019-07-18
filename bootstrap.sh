@@ -32,7 +32,7 @@ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Secret
 metadata:
-  name: $WORKSHOP_ID
+  name: $WORKSHOP_ID-cf
   namespace: workspaces
 type: Opaque
 data:
