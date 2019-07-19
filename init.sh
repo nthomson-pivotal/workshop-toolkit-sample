@@ -13,8 +13,8 @@ git clone https://github.com/cloudfoundry-samples/spring-music.git
 # Link CF executable
 sudo ln -s /mnt/coder/bin/cf /usr/bin/cf
 
-echo 'source /mnt/coder/config' > ~/.bashrc/cf.bashrc
-chmod +x ~/.bashrc/cf.bashrc
+echo 'source /mnt/coder/config' > ~/.bashrc.d/cf.bashrc
+chmod +x ~/.bashrc.d/cf.bashrc
 
 source /mnt/coder/config
 
