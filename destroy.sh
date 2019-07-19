@@ -4,8 +4,6 @@ set -e
 
 BIN_DIR=$CODER_DIR/bin
 
-source /mnt/coder/config
-
 $BIN_DIR/cf login -a $CF_API -u admin -p $CF_PASSWORD --skip-ssl-validation -o system
 
 $BIN_DIR/cf delete-space -o workspaces $WORKSHOP_ID -f
