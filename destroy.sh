@@ -8,4 +8,4 @@ $BIN_DIR/cf login -a $CF_API -u admin -p $CF_PASSWORD --skip-ssl-validation -o s
 
 $BIN_DIR/cf delete-space -o workspaces $WORKSHOP_ID -f
 
-$BIN_DIR/cf deletes-user $WORKSHOP_ID -f
+$BIN_DIR/cf delete-user $WORKSHOP_ID -f
