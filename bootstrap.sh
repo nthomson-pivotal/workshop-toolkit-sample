@@ -20,7 +20,7 @@ $BIN_DIR/cf login -a $CF_API -u admin -p $CF_PASSWORD --skip-ssl-validation -o s
 
 $BIN_DIR/cf create-space -o workspaces $WORKSHOP_ID
 
-password='pa55w0rd'
+password=$(pwgen 8 1)
 
 $BIN_DIR/cf create-user $WORKSHOP_ID $password
 $BIN_DIR/cf set-space-role $WORKSHOP_ID workspaces $WORKSHOP_ID SpaceDeveloper
