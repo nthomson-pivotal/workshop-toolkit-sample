@@ -7,7 +7,7 @@ This workspace has:
 - The Spring Music sample application cloned
 - CF CLI logged in to your own dedicated space
 
-First, check out the CF target you're logged in to:
+First, open a terminal via the menu and check out the CF target you're logged in to:
 
 ```
 cf target
