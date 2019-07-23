@@ -10,13 +10,7 @@ sudo apt-get install -y openjdk-8-jdk git
 # Fetch spring-music
 git clone https://github.com/cloudfoundry-samples/spring-music.git
 
-# Link CF executable
-sudo ln -s /mnt/coder/bin/cf /usr/bin/cf
-
-echo 'source /mnt/coder/config' > ~/.bashrc.d/cf.bashrc
-chmod +x ~/.bashrc.d/cf.bashrc
-
-source /mnt/coder/config
+source /mnt/coder/bashrc.d/cf.bashrc
 
 # Log in to CF CLI
 cf login -a $CF_API -u $WORKSHOP_ID -p $CF_PASSWORD --skip-ssl-validation
