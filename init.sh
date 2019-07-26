@@ -2,8 +2,8 @@
 
 set -e
 
-# Fetch spring-music
-git clone https://github.com/cloudfoundry-samples/spring-music.git
+# Fetch spring-petclinic
+git clone https://github.com/spring-projects/spring-petclinic.git
 
 if [ -f /mnt/coder/bashrc.d/cf.bashrc ]; then
   source /mnt/coder/bashrc.d/cf.bashrc
