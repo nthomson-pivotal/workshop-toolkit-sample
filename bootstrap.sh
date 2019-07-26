@@ -23,18 +23,20 @@ if [ ! -f "$BIN_DIR/cf" ]; then
   chmod +x $BIN_DIR/cf
 fi
 
-$BIN_DIR/cf login -a $CF_API -u admin -p $CF_PASSWORD --skip-ssl-validation -o system
+if [ ! -z "$CF_API" ]; then
+  $BIN_DIR/cf login -a $CF_API -u admin -p $CF_PASSWORD --skip-ssl-validation -o system
 
-$BIN_DIR/cf create-space -o workspaces $WORKSHOP_ID
+  $BIN_DIR/cf create-space -o workspaces $WORKSHOP_ID
 
-password=$(pwgen 8 1)
+  password=$(pwgen 8 1)
 
-$BIN_DIR/cf create-user $WORKSHOP_ID $password
-$BIN_DIR/cf set-space-role $WORKSHOP_ID workspaces $WORKSHOP_ID SpaceDeveloper
+  $BIN_DIR/cf create-user $WORKSHOP_ID $password
+  $BIN_DIR/cf set-space-role $WORKSHOP_ID workspaces $WORKSHOP_ID SpaceDeveloper
 
-cat << EOF > /mnt/coder/bashrc.d/cf.bashrc
-export CF_API=$CF_API
-export CF_PASSWORD=$password
-EOF
+  cat << EOF > /mnt/coder/bashrc.d/cf.bashrc
+  export CF_API=$CF_API
+  export CF_PASSWORD=$password
+  EOF
 
-chmod +x /mnt/coder/bashrc.d/cf.bashrc
+  chmod +x /mnt/coder/bashrc.d/cf.bashrc
+fi
