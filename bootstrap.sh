@@ -39,5 +39,5 @@ if [ ! -z "$CF_API" ]; then
   EOF
 
   chmod +x /mnt/coder/bashrc.d/cf.bashrc
-  EOF
+EOF
 fi
