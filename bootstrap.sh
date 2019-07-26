@@ -36,8 +36,11 @@ if [ ! -z "$CF_API" ]; then
   cat << EOF > /mnt/coder/bashrc.d/cf.bashrc
   export CF_API=$CF_API
   export CF_PASSWORD=$password
-  EOF
-
-  chmod +x /mnt/coder/bashrc.d/cf.bashrc
+EOF
+else
+  cat << EOF > /mnt/coder/bashrc.d/cf.bashrc
+  echo "WARNING: CF CLI not logged in as administrator did not complete setup
 EOF
 fi
+
+chmod +x /mnt/coder/bashrc.d/cf.bashrc
