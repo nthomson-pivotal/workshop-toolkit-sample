@@ -34,12 +34,12 @@ if [ ! -z "$CF_API" ]; then
   $BIN_DIR/cf set-space-role $WORKSHOP_ID workspaces $WORKSHOP_ID SpaceDeveloper
 
   cat << EOF > /mnt/coder/bashrc.d/cf.bashrc
-  export CF_API=$CF_API
-  export CF_PASSWORD=$password
+export CF_API=$CF_API
+export CF_PASSWORD=$password
 EOF
 else
   cat << EOF > /mnt/coder/bashrc.d/cf.bashrc
-  echo "WARNING: CF CLI not logged in as administrator did not complete setup
+echo "WARNING: CF CLI not logged in as administrator did not complete setup"
 EOF
 fi
 
