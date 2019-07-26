@@ -9,7 +9,7 @@ wget -O jdk.tar.gz https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/do
 tar -xf jdk.tar.gz -C $CODER_DIR
 
 cat << EOF > /mnt/coder/bashrc.d/jdk.bashrc
-export PATH=$PATH:/mnt/coder/jdk8u222-b10/bin
+export PATH=\$PATH:/mnt/coder/jdk8u222-b10/bin
 EOF
 chmod +x /mnt/coder/bashrc.d/jdk.bashrc
 
