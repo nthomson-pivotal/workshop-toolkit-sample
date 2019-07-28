@@ -2,6 +2,12 @@
 
 set -e
 
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    default-jre-headless \
+    default-jdk-headless \
+    maven \
+    gradle
+
 # Fetch spring-petclinic
 git clone https://github.com/spring-projects/spring-petclinic.git
 
