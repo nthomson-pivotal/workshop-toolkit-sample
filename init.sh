@@ -2,7 +2,7 @@
 
 set -e
 
-sudo apt-get update && sudo apt-get install --no-install-recommends -y \
+sudo apt-get install --no-install-recommends -y \
     default-jre-headless \
     default-jdk-headless \
     maven \
