@@ -3,7 +3,7 @@
 set -e
 
 # Wire repos to home directory
-ln -s $CODER_DIR/repos ~/repos
+ln -s $CODER_DIR/repos ~/project/repos
 
 if [ ! -z "$CF_API" ]; then
   # Log in to CF CLI
