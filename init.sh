@@ -2,8 +2,8 @@
 
 set -e
 
-# Fetch spring-petclinic
-git clone https://github.com/spring-projects/spring-petclinic.git
+# Wire repos to home directory
+ln -s $CODER_DIR/repos ~/repos
 
 if [ ! -z "$CF_API" ]; then
   # Log in to CF CLI
