@@ -44,3 +44,15 @@ EOF
 fi
 
 chmod +x /mnt/coder/bashrc.d/cf.bashrc
+
+repo="https://github.com/cloudfoundry-samples/spring-music.git"
+
+if [ ! -z "$WORKSHOP_REPO" ]; then
+  repo="$WORKSHOP_REPO"
+fi
+
+REPOS_DIR=$CODER_DIR/repos
+
+mkdir -p $REPOS_DIR
+
+git clone $repo $REPOS_DIR
