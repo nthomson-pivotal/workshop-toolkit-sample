@@ -4,7 +4,7 @@ set -e
 
 BIN_DIR=$CODER_DIR/bin
 
-RUN apt-get update && apt-get install --no-install-recommends -y \
+apt-get update && apt-get install --no-install-recommends -y \
     default-jre-headless \
     default-jdk-headless \
     maven \
