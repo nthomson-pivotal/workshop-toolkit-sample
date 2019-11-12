@@ -52,4 +52,6 @@ REPOS_DIR=$CODER_DIR/repos
 
 mkdir -p $REPOS_DIR
 
-git clone $repo $REPOS_DIR
+if [ ! -f $REPOS_DIR/README.md ]; then
+  git clone $repo $REPOS_DIR
+fi
