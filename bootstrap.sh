@@ -6,9 +6,7 @@ BIN_DIR=$CODER_DIR/bin
 
 sudo apt-get update && sudo apt install -y \
     default-jre-headless \
-    default-jdk-headless \
-    maven \
-    gradle
+    default-jdk-headless
 
 if [ ! -f "$BIN_DIR/cf" ]; then
   wget -O /tmp/cf.tgz https://s3-us-west-1.amazonaws.com/cf-cli-releases/releases/v6.46.0/cf-cli_6.46.0_linux_x86-64.tgz
