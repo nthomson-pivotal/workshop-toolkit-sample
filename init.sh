@@ -11,14 +11,14 @@ if [ ! -z "$CF_API" ]; then
 fi
 
 # Setup Java Extension
-RUN mkdir -p ${VSCODE_EXTENSIONS}/java \
+mkdir -p ${EXTENSIONS_DIR}/java \
     && curl -JLs https://marketplace.visualstudio.com/_apis/public/gallery/publishers/redhat/vsextensions/java/latest/vspackage | bsdtar --strip-components=1 -xf - -C ${VSCODE_EXTENSIONS}/java extension
 
-RUN mkdir -p ${VSCODE_EXTENSIONS}/java-debugger \
+mkdir -p ${EXTENSIONS_DIR}/java-debugger \
     && curl -JLs https://marketplace.visualstudio.com/_apis/public/gallery/publishers/vscjava/vsextensions/vscode-java-debug/latest/vspackage | bsdtar --strip-components=1 -xf - -C ${VSCODE_EXTENSIONS}/java-debugger extension
 
-RUN mkdir -p ${VSCODE_EXTENSIONS}/java-test \
+mkdir -p ${EXTENSIONS_DIR}/java-test \
     && curl -JLs https://marketplace.visualstudio.com/_apis/public/gallery/publishers/vscjava/vsextensions/vscode-java-test/latest/vspackage | bsdtar --strip-components=1 -xf - -C ${VSCODE_EXTENSIONS}/java-test extension
 
-RUN mkdir -p ${VSCODE_EXTENSIONS}/maven \
+mkdir -p ${EXTENSIONS_DIR}/maven \
     && curl -JLs https://marketplace.visualstudio.com/_apis/public/gallery/publishers/vscjava/vsextensions/vscode-maven/latest/vspackage | bsdtar --strip-components=1 -xf - -C ${VSCODE_EXTENSIONS}/maven extension
