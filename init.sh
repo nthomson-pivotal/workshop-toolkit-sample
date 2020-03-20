@@ -10,7 +10,8 @@ sudo apt-get update && sudo apt-get install --no-install-recommends -y \
     default-jre-headless \
     default-jdk-headless \
     maven \
-    gradle
+    gradle \
+    jq
 
 # Extensions
 code-server --install-extension redhat.java
