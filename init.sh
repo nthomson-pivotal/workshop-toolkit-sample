@@ -20,6 +20,14 @@ code-server --install-extension vscjava.vscode-java-test
 code-server --install-extension ecmel.vscode-spring-boot
 code-server --install-extension vscjava.vscode-spring-boot-dashboard
 
+# Do some stuff to pre-seed Maven
+git clone https://github.com/cloudfoundry-samples/spring-music.git /tmp/spring-music
+
+(cd /tmp/spring-music && ./mvnw package -DskipTests)
+
+rm -rf /tmp/spring-music
+
+# Set up CF CLI if provided
 if [ ! -z "$CF_API" ]; then
   # Log in to CF CLI
   cf login -a $CF_API -u $WORKSHOP_ID -p $CF_PASSWORD --skip-ssl-validation
