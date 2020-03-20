@@ -2,11 +2,13 @@
 
 set -e
 
-# Wire repos to home directory
-#ln -s $CODER_DIR/repos ~/project/repos
+# Create empty repos directory
 mkdir ~/project/repos
 
 code-server --install-extension redhat.java
+code-server --install-extension vscjava.vscode-spring-initializr
+code-server --install-extension vscjava.vscode-maven
+code-server --install-extension vscjava.vscode-java-test
 
 if [ ! -z "$CF_API" ]; then
   # Log in to CF CLI
