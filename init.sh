@@ -6,7 +6,7 @@ set -e
 mkdir ~/project/repos
 
 # OS packages
-RUN apt-get update && apt-get install --no-install-recommends -y \
+sudo apt-get update && sudo apt-get install --no-install-recommends -y \
     default-jre-headless \
     default-jdk-headless \
     maven \
